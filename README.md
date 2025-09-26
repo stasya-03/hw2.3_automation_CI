@@ -1,0 +1,1 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/loul0rtc3etm8u6x?svg=true)](https://ci.appveyor.com/project/stasya-03/hw2-3-automation-ci)
