@@ -1,0 +1,19 @@
+image: Visual Studio 2019  # Windows-окружение
+
+environment:
+  JAVA_HOME: C:\Program Files\Java\jdk11
+
+branches:
+  only:
+    - main
+
+build: off  # отключаем стандартную сборку
+
+install:
+  # Запускаем SUT (без & — в Windows используют start /B для фонового процесса)
+  - ps: Start-Process java -ArgumentList "-jar artifacts\app-mbank.jar"
+  # Делаем gradlew исполняемым не нужно, сразу можно запускать
+
+build_script:
+  # Запускаем автотесты
+  - cmd /c gradlew.bat test --info -Dselenide.headless=true
